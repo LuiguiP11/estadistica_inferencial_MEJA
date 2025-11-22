@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final: Análisis de Correlación - Causalidad</title>
+    <link rel="stylesheet" href="../presentacion_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide active">
+            <div class="slide-content">
+                <h2>Una Aclaración Importante: Correlación no Implica Causalidad</h2>
+                <hr>
+                <div class="causality-container">
+                    <div class="causality-text">
+                        <p>Nuestro análisis muestra que las dos dimensiones se mueven juntas, pero esto <strong>no significa que una cause la otra</strong>.</p>
+                        <p class="example-title">Ejemplo Clásico:</p>
+                        <p>La venta de helados y los ataques de tiburón están correlacionados (ambos aumentan en verano). Pero, ¿comer helado provoca ataques de tiburón? ¡No!</p>
+                        <p>La verdadera causa, o la "variable oculta", es el <strong>calor</strong> del verano, que impulsa ambos fenómenos.</p>
+                    </div>
+                    <div class="causality-diagram">
+                        <div class="diagram-box">Venta de Helados</div>
+                        <div class="arrow-up">🡑</div>
+                        <div class="correlation-line"></div>
+                        <div class="arrow-up">🡑</div>
+                        <div class="diagram-box">Ataques de Tiburón</div>
+                        <div class="causal-arrows">
+                            <div class="arrow-diag-left"> causation</div>
+                            <div class="arrow-diag-right"> causation</div>
+                        </div>
+                        <div class="diagram-box cause">EL CALOR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="slide7.html" class="nav-button">← Anterior</a>
+        <a href="slide9.html" class="nav-button">Siguiente →</a>
+    </div>
+</body>
+</html>

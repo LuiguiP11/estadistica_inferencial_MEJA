@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final: Análisis de Correlación - Perfil</title>
+    <link rel="stylesheet" href="../presentacion_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide active">
+            <div class="slide-content">
+                <h2>Perfil del Participante (Análisis Descriptivo)</h2>
+                <hr>
+                <div class="descriptive-charts-container">
+                    <div class="chart-item">
+                        <h3>Distribución por Género</h3>
+                        <canvas id="generoChart"></canvas>
+                    </div>
+                    <div class="chart-item">
+                        <h3>¿Trabaja actualmente?</h3>
+                        <canvas id="trabajaChart"></canvas>
+                    </div>
+                    <div class="chart-item">
+                        <h3>Situación Académica</h3>
+                        <canvas id="situacionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="slide3.html" class="nav-button">← Anterior</a>
+        <a href="slide5.html" class="nav-button">Siguiente →</a>
+    </div>
+
+    <script src="slide4_script.js"></script>
+</body>
+</html>
