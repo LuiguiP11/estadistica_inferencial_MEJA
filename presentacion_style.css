@@ -1,0 +1,361 @@
+:root {
+    --primary-font: 'Lato', sans-serif;
+    --secondary-font: 'Montserrat', sans-serif;
+    --text-color: #E6F1FF;
+    --bg-color: #0a192f;
+    --slide-bg: #112240;
+    --accent-color: #64FFDA; /* Un verde menta neón que contrasta bien */
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --button-hover-bg: rgba(100, 255, 218, 0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.presentation-container {
+    width: 100%;
+    max-width: 1100px;
+    max-height: 85vh; /* La regla que soluciona el problema */
+    aspect-ratio: 16 / 9;
+    position: relative;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--slide-bg);
+    border: 1px solid var(--accent-color);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alineamos arriba para que nada se oculte */
+    /* padding: 2.5%; */ /* Eliminado, ahora el padding va en slide-content */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.slide-content {
+    width: 100%;
+    height: 100%; /* Ocupa todo el espacio de .slide */
+    padding: 40px; /* Padding fijo de 40px */
+    box-sizing: border-box; /* Incluir padding en width/height */
+    overflow-y: auto;
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+h1, h2 {
+    font-family: var(--secondary-font);
+    color: var(--accent-color);
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+p, li {
+    font-size: 0.9em;
+    line-height: 1.5;
+    text-align: center; /* Ahora centrado por defecto */
+    color: #ccd6f6;
+}
+
+ul {
+    padding-left: 25px;
+    list-style-type: none;
+}
+
+li::before {
+    content: '»';
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+hr {
+    display: none;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: #8892b0;
+    margin-top: 0;
+    text-align: center; /* Centrar el subtítulo */
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    filter: invert(90%) sepia(10%) saturate(150%) hue-rotate(180deg) brightness(150%) contrast(90%);
+}
+
+.logo {
+    max-height: 35px;
+}
+
+.logo-jhiros {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    max-height: 85px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.logo-jhiros:hover {
+    opacity: 1;
+}
+
+.author-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.author-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    text-align: center;
+    color: #8892b0;
+}
+.author-info p strong {
+    color: var(--text-color);
+}
+
+.chart-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.results-box {
+    background-color: var(--bg-color);
+    border-left: 5px solid var(--accent-color);
+    padding: 15px 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+.results-box p {
+    margin: 10px 0;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.quote {
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid var(--accent-color);
+    background: transparent;
+    font-style: italic;
+    font-size: 1.3em;
+}
+
+.quote-author {
+    font-style: normal;
+    font-weight: 700;
+    text-align: right;
+    margin-top: 15px;
+    color: var(--accent-color);
+}
+
+.descriptive-charts-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 900px;
+    gap: 30px;
+    margin-top: 20px; /* Separación explícita del título */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chart-item {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 250px; /* Forzamos una altura máxima */
+}
+
+.chart-item h3 {
+    font-size: 1.0em;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.causality-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    gap: 40px;
+}
+
+.causality-text {
+    width: 50%;
+    text-align: left;
+}
+
+.causality-text .example-title {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 20px;
+}
+
+.causality-diagram {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.diagram-box {
+    border: 2px solid var(--accent-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.diagram-box.cause {
+    border-color: #FFD700; /* Un color dorado para la causa real */
+    color: #FFD700;
+    margin-top: 40px;
+}
+
+.arrow-up {
+    font-size: 2em;
+    color: var(--accent-color);
+    line-height: 0.5;
+}
+
+.correlation-line {
+    width: 2px;
+    height: 30px;
+    background-color: var(--accent-color);
+    border-style: dashed;
+}
+
+.causal-arrows {
+    position: absolute;
+    bottom: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.arrow-diag-left, .arrow-diag-right {
+    position: absolute;
+    color: #FFD700;
+    font-size: 1.5em;
+}
+
+.arrow-diag-left::before {
+    content: '🡤';
+    transform: translateX(-50px) translateY(10px);
+    display: block;
+}
+
+.arrow-diag-right::before {
+    content: '🡥';
+    transform: translateX(50px) translateY(10px);
+    display: block;
+}
+
+.conclusions-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.conclusion-item {
+    width: 31%;
+    padding: 15px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.conclusion-item h4 {
+    font-size: 1.1em;
+    color: var(--accent-color);
+    margin-top: 0;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 8px;
+}
+
+
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+a.nav-button {
+    padding: 10px 25px;
+    font-family: var(--secondary-font);
+    font-size: 1em;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a.nav-button:hover {
+    background-color: var(--button-hover-bg);
+    box-shadow: 0 0 10px var(--accent-color);
+}
